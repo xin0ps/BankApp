@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R8kYwmCXWFphW2zjmI0x7vCqQpwpHTnnKPJz7N/rkXmb63NeiVLUXIDTtu6DvNa+RiZckv1fS+WzcuoufeQG8A==",
+  "dgSpecHash": "vnZo8Z85xkqXBd1mTH1pY+5WnrLLQsUwgbKpqXXybWUzQwsSim+KHo6FQxTa3tLGp77IdFtTsGE1rTw9G2OIhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\Yeni klasör\\BankApp\\BankApp.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\BankApp-master\\BankApp\\BankApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

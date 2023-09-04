@@ -39,6 +39,33 @@ namespace BankApp
 
         public User CheckByPin(string pin)
         {
+
+            try
+            {
+                if ((Convert.ToInt32(pin) > 999) && (Convert.ToInt32(pin) < 10000))
+                {
+                    if (int.TryParse(pin, out _))
+                    {
+                    }
+                    else
+                    {
+                        throw new FormatException("4 reqemli daxil et");
+                    }
+                }
+                else { throw new Exception("4 Reqemli daxil et"); }
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Xeta: " + ex.Message + "   \nPress any key for continue...");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Xeta: " + ex.Message + "   \nPress any key for continue...");
+                Console.ReadKey();
+
+            }
+        
             try
             {
                 foreach (var user in this.users)
@@ -51,7 +78,7 @@ namespace BankApp
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred while checking user by pin: " + ex.Message);
+                Console.WriteLine("An error occurred while checking user pin: " + ex.Message);
             }
 
             return null;

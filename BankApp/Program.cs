@@ -34,7 +34,7 @@ while (true)
 
     if (user != null)
     {
-        string txt1 = "Login to account " + user.Name + " Pin:" + user.Creditcard.Pin + " " + DateTime.Now + "\n";
+        string txt1 = "Login to account " + user.Name + " " +user.Surname + " Pin:" + user.Creditcard.Pin + " " + DateTime.Now + "\n";
         user.addOperation(txt1); ;
         while (true)
         {
@@ -42,7 +42,7 @@ while (true)
             Console.WriteLine(bank.Bankname+"----Bank");
             Console.WriteLine("Welcome " + user.Name + " " + user.Surname);
             
-            Console.WriteLine("[1]-Balance\n[2]-WithDrawal\n[3]-Card to Card\n[4]-Show All Operations\n[0]-Exit");
+            Console.WriteLine("[1]-Balance\n[2]-WithDrawal\n[3]-Card to Card\n[4]-Show All Operations\n[5]-Change Pin\n[0]-Exit");
             string sec = Console.ReadLine();
             if (sec == "1")
             {
@@ -151,6 +151,13 @@ while (true)
                 user.showOperations();
                 Console.WriteLine("Press any key for continue");
                 Console.ReadKey();
+            }
+            if(sec=="5")
+            {
+                Console.WriteLine("Enter new pin:");
+                
+                string? pin1= Console.ReadLine();
+                user.ChangePin(pin1);
             }
         }
        

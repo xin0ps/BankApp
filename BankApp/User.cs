@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,40 @@ namespace BankApp
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred while creating a user: " + ex.Message);
+            }
+        }
+
+        public void ChangePin(string? pin)
+        {
+            try
+            {
+                if ((Convert.ToInt32(pin) > 999) && (Convert.ToInt32(pin) < 10000))
+                {
+                    if (int.TryParse(pin, out _))
+                    {
+                        this.CreditCard.Pin = pin;
+                        
+                        this.addOperation("Pin changed -New Pin:"  +pin +  " " + DateTime.Now + "\n");
+                        Console.WriteLine("PIN changed\nPress any key for continue...");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        throw new FormatException("4 reqemli daxil et");
+                    }
+                }
+                else { throw new Exception("4 Reqemli daxil et"); }
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Xeta: " + ex.Message + "   \nPress any key for continue...");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Xeta: " + ex.Message+"   \nPress any key for continue...");
+                Console.ReadKey();
+
             }
         }
 

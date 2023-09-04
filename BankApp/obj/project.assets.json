@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\Yeni klasör\\BankApp\\BankApp.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\BankApp-master\\BankApp\\BankApp.csproj",
       "projectName": "BankApp",
-      "projectPath": "C:\\Users\\PC\\Desktop\\Yeni klasör\\BankApp\\BankApp.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\BankApp-master\\BankApp\\BankApp.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\Yeni klasör\\BankApp\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\BankApp-master\\BankApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
