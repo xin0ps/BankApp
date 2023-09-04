@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankApp
 {
-    internal class Bank 
+    internal class Bank
     {
         private string? bankname;
 
@@ -21,42 +21,64 @@ namespace BankApp
 
         public Bank()
         {
-          
+
         }
 
         public Bank(string? bankname, List<User> users)
         {
-            Bankname = bankname;
-            
-            this.users = users;
+            try
+            {
+                Bankname = bankname;
+                this.users = users;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while creating a bank: " + ex.Message);
+            }
         }
 
         public User CheckByPin(string pin)
         {
-            foreach (var user in this.users)
+            try
             {
-                if(user.Creditcard.Pin==pin)return user;
-                 
+                foreach (var user in this.users)
+                {
+                    if (user.Creditcard != null && user.Creditcard.Pin == pin)
+                    {
+                        return user;
+                    }
+                }
             }
-         
-            return null ;
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while checking user by pin: " + ex.Message);
+            }
+
+            return null;
         }
+
         public override string ToString()
         {
-            string txt = "";
-            foreach (var item in this.users)
+            try
             {
-                txt = txt + item+"---------------------------------------\n";
+                string txt = "";
+                foreach (var item in this.users)
+                {
+                    txt = txt + item + "---------------------------------------\n";
+                }
+                return txt;
             }
-
-            return txt;
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while generating the bank's user list: " + ex.Message);
+                return string.Empty;
+            }
         }
-
-
     }
+}
 
     
-}
+
             
           
         
